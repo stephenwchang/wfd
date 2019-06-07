@@ -11,7 +11,7 @@ module.exports = function(app) {
     client.search({
       term: req.params.food,
       location: 'somserset, new jersey',
-    }).then(response => {
+    }).then(function(response) {
       res.json(response.jsonBody);
     }).catch(e => {
       console.log(e);
@@ -23,7 +23,7 @@ module.exports = function(app) {
     client.search({
       term: "pizza",
       location: 'somserset, new jersey',
-    }).then(response => {
+    }).then(function(response) {
       res.render("results", {
         results: response.jsonBody.businesses
       });
