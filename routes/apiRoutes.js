@@ -1,7 +1,7 @@
 var db = require("../models");
-const yelp = require('yelp-fusion');
-const unirest = require('unirest');
-const client = yelp.client('4fACeJwQ9CqbO2yggEhcQTchFhAhKVFEf-cZGhxCL3uY3uO4iKcx55PfxUJ-h_faNZQsWFQX6I13LdVQZ9JktmQU9x4a5Oul0Ri-JvhQ-MjrpM4aO2yr8ijmGy_5XHYx');
+var yelp = require('yelp-fusion');
+var unirest = require('unirest');
+var client = yelp.client('4fACeJwQ9CqbO2yggEhcQTchFhAhKVFEf-cZGhxCL3uY3uO4iKcx55PfxUJ-h_faNZQsWFQX6I13LdVQZ9JktmQU9x4a5Oul0Ri-JvhQ-MjrpM4aO2yr8ijmGy_5XHYx');
 
 
 
