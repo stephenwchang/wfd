@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "Blueboy42$",
     "database": "dinner_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "Blueboy42$",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
