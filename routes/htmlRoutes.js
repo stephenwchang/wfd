@@ -3,10 +3,28 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Example.findAll({}).then(function() {
       res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
+        questions: [
+          {
+            question: "question 1",
+            answer1: "answer1",
+            answer2: "answer2",
+            answer3: "answer3"
+          },
+          {
+            question: "question 2",
+            answer1: "answer4",
+            answer2: "answer5",
+            answer3: "answer6"
+          },
+          {
+            question: "question 3",
+            answer1: "answer7",
+            answer2: "answer8",
+            answer3: "answer9"
+          }
+        ]
       });
     });
   });
