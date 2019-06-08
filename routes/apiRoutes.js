@@ -5,6 +5,43 @@ var client = yelp.client(
   "4fACeJwQ9CqbO2yggEhcQTchFhAhKVFEf-cZGhxCL3uY3uO4iKcx55PfxUJ-h_faNZQsWFQX6I13LdVQZ9JktmQU9x4a5Oul0Ri-JvhQ-MjrpM4aO2yr8ijmGy_5XHYx"
 );
 
+/*
+Loop thru the array for each food item and count how many of the user's responses are 
+present and assign a point
+*/
+//user1: "savory", "pasta/pizza", "pastries" -  pizza(2), brownies(1)
+
+var user = {
+  pizza: 0,
+  brownies: 0,
+  tacos: 0
+};
+
+var user1foodAns = [
+  "savory",
+  "something cheesy",
+  "pizza/pasta",
+  "brownies/cookies"
+];
+//questions and answers are stored in database... how to a) randomly serve a question with its answers in the survey from the database, b) store the users selection in the above variable c) return local object
+var foodKey = {
+  pizza: ["something cheesy", "savory", "pasta/pizza"],
+  brownies: ["brownies/cookies", "pastries", "something sweet"],
+  tacos: ["spicy", "salsa", "something seasoned"]
+};
+
+for (var i = 0; i < user1foodAns.length; i++) {
+  var ans = user1foodAns[i];
+
+  for (var key in foodKey) {
+    if (foodKey[key].includes(ans)) {
+      user[key]++;
+    }
+  }
+}
+
+//look into user to find key which has highest numerical value
+
 module.exports = function(app) {
   // test route for yelp food param
   app.get("/api/search/:food", function(req, res) {
