@@ -1,17 +1,16 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 mx-auto" id="main-content" style="background-color: white;">
+      <div class="col-8 mx-auto" id="main-content">
         <h1>{{msg}}</h1>
         <h2>What's For Dinner!</h2>
         <h3>Survey</h3>
           {{#each questions}}
 
           <div id="question" style="background-color:aqua">{{this.question}}</div>
-          <button type="button" class="btn btn-primary">{{this.answer1}}<</button>
-          <button type="button" class="btn btn-primary">{{this.answer2}}<</button>
-          <button type="button" class="btn btn-primary">{{this.answer3}}<</button>
-
+          <button type="button" class="btn btn-primary">{{this.answer1}}</button>
+          <button type="button" class="btn btn-primary">{{this.answer2}}</button>
+          <button type="button" class="btn btn-primary">{{this.answer3}}</button>
 
           {{/each}}
         </ul>
