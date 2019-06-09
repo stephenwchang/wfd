@@ -6,12 +6,12 @@ var client = yelp.client(
 );
 
 /*
-Loop thru the array for each food item and count how many of the user's responses are 
+Loop thru the array for each food item and count how many of the user's responses are
 present and assign a point
 */
 //user1: "savory", "pasta/pizza", "pastries" -  pizza(2), brownies(1)
 
-var user = {
+/* var user = {
   pizza: 0,
   brownies: 0,
   tacos: 0
@@ -39,6 +39,7 @@ for (var i = 0; i < user1foodAns.length; i++) {
     }
   }
 }
+*/
 
 //look into user to find key which has highest numerical value
 
