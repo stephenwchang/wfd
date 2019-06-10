@@ -33,7 +33,7 @@ module.exports = function(app) {
     db.Foods.findAll({}).then(function(response) {
       res.render("index", {
         questions: response
-      })
+      });
     });
   });
 
