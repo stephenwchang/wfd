@@ -1,99 +1,42 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+//user1: "savory", "pasta/pizza", "pastries" -  pizza(2), brownies(1)
+var userScore = {
+  pizza: 0,
+  brownies: 0,
+  tacos: 0
+};
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
+var userFoodAns = [];
+
+//questions and answers are stored in database... how to a) randomly serve a question with its answers in the survey from the database, b) store the users selection in the above variable c) return local object
+var foodKey = {
+  pizza: ["something cheesy", "savory", "pasta/pizza"],
+  brownies: ["brownies/cookies", "pastries", "something sweet"],
+  tacos: ["spicy", "salsa", "something seasoned"]
+};
+
+
+
+
+
+$(".food-choice").on("click", function(){
+  var currentId = $(this).data("id");   // retrieves the data-id of the current row of buttons
+  $(`[data-id=${currentId}]`).attr("disabled", true); // disables all buttons of the same row
+  $(this).css("background-color", "green");
+  $(this).css("opacity", 1);
+  userFoodAns.push(this.textContent);
+  console.log(currentId);
+  console.log(userFoodAns);
+});
+
+$("#submit-button").on("click", function() {
+  for (var i = 0; i < userFoodAns.length; i++) {
+    var ans = userFoodAns[i];
+
+    for (var key in foodKey) {
+      if (foodKey[key].includes(ans)) {
+        userScore[key]++;
+        console.log("user score" + JSON.stringify(userScore));
+      }
+    }
   }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+});
