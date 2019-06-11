@@ -1,4 +1,5 @@
 var db = require("../models");
+var Sequelize = require("sequelize");
 
 module.exports = function(app) {
   // Load index page
@@ -30,7 +31,7 @@ module.exports = function(app) {
   // });
 
   app.get("/", function(req, res) {
-    db.Foods.findAll({}).then(function(response) {
+    db.Foods.findAll({ order: Sequelize.literal("rand()") }).then(function(response) {
       res.render("index", {
         questions: response
       });
