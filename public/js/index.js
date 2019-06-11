@@ -14,10 +14,6 @@ var foodKey = {
   tacos: ["spicy", "salsa", "something seasoned"]
 };
 
-
-
-
-
 $(".food-choice").on("click", function(){
   var currentId = $(this).data("id");   // retrieves the data-id of the current row of buttons
   $(`[data-id=${currentId}]`).attr("disabled", true); // disables all buttons of the same row
@@ -31,7 +27,6 @@ $(".food-choice").on("click", function(){
 $("#submit-button").on("click", function() {
   for (var i = 0; i < userFoodAns.length; i++) {
     var ans = userFoodAns[i];
-
     for (var key in foodKey) {
       if (foodKey[key].includes(ans)) {
         userScore[key]++;

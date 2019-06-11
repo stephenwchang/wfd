@@ -1,4 +1,10 @@
 #main-content {
   background-color: white;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.5);
+}
+
+#question {
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
