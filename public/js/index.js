@@ -22,7 +22,7 @@ var foodKey = {
   sushi: ["japanese/chinese food", "flavor and nuance", "im ballin’ idgaf", "fresh sushi", "multicolored"],
   burgers: ["something cheesy", "something with cheese", "to fill me up as cheaply as possible", "ten bucks", "no man", "burgers 4 days"],
   chineseFood: ["twenty bucks", "japanese/chinese food", "maybe a lil", "something saucy and spicy", "chinese takeout", "red/orange (saucy)"],
-  salad: "[something refreshing/healthy", "not to die", "twenty bucks", "no man", "healthy food",  "grocery for fresh ingredients", "vegi bro", "assorted vegetables", "green", "multicolored"],
+  salad: ["something refreshing/healthy", "not to die", "twenty bucks", "no man", "healthy food",  "grocery for fresh ingredients", "vegi bro", "assorted vegetables", "green", "multicolored"],
   vegiSoup: ["something refreshing/healthy", "not to die", "five bucks", "vegi bro", "green"],
   carrotCake: ["something sweet", "dessert", "I'd rather have sweet", "Dinner?naw, dessert", "healthy food", "pastry shop", "pastries", "cakes/cookies"],
 };
