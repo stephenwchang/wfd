@@ -2,7 +2,7 @@
 var userScore = {
   pizza: 0,
   indian: 0,
-  brownie: 0,
+  cookie: 0,
   burrito: 0,
   sushi: 0,
   burgers: 0,
@@ -17,7 +17,7 @@ var userFoodAns = [];
 var foodKey = {
   pizza: ["something cheesy", "probably pizza", "something with cheese", "to fill me up as cheaply as possible", "five bucks", "no man", "idk but cheese", "pizza spot", "gotta have cheese", "pizza", "yellow (CHEESE)"],
   indian: ["indian food", "to experience diff flavors and spices", "twenty bucks", "hell yes", "something saucy and spicy", "indian joint", "chicken tikka masala", "red/orange (saucy)"],
-  brownie: ["something sweet", "dessert", "five bucks", "I'd rather have sweet", "Dinner?naw, dessert", "pastry shop", "cookies/brownies", "cakes/cookies", "brownies"],
+  cookie: ["something sweet", "dessert", "five bucks", "I'd rather have sweet", "Dinner?naw, dessert", "pastry shop", "cookies/brownies", "cakes/cookies", "brownies"],
   burrito: ["something cheesy", "ten bucks", "maybe a lil", "tacos, red/orange (saucy)", "multicolored"],
   sushi: ["japanese/chinese food", "flavor and nuance", "im ballin’ idgaf", "fresh sushi", "multicolored"],
   burgers: ["something cheesy", "something with cheese", "to fill me up as cheaply as possible", "ten bucks", "no man", "burgers 4 days"],
@@ -43,8 +43,16 @@ $("#stay-in").on("click", function() {
 });
 
 $("#go-out").on("click", function() {
-  window.location.replace("/results/restaurant/"+generateResult())
+  var locationForm = $('<form class="form-inline"><div class="form-group mx-sm-3 mb-2"><input type="text" id="zip-input" class="form-control" placeholder="Enter your ZIP code"</div><button type="button" id="zip-button" class="btn btn-info btn-hover color-2">Submit</button></form>');
+  $("#submit-buttons").append(locationForm);
+
+  $("#zip-button").on("click", function() {
+    var zip = $("#zip-input").val();
+    window.location.replace("/results/restaurant/"+generateResult()+"/"+zip);
+  });
 });
+
+
 
 $("#back-button").on("click", function() {
   window.location.replace("/")

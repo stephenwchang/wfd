@@ -22,11 +22,11 @@ module.exports = function(app) {
   });
 
   // route serves up restaurant results based off user survey result
-  app.get("/results/restaurant/:result", function(req, res) {
+  app.get("/results/restaurant/:result/:zip", function(req, res) {
     client
       .search({
         term: req.params.result,
-        location: "somserset, new jersey"
+        location: req.params.zip
       })
       .then(function(response) {
         res.render("restaurant-results", {
@@ -61,7 +61,7 @@ module.exports = function(app) {
       "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0"
     )
     .end(function(result) {
-      var foodId = result.body.results[0].id;
+      var foodId = result.body.results[Math.floor(Math.random() * result.body.results.length)].id;
       unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + foodId + "/information")
         .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
         .header("X-RapidAPI-Key", "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0")
