@@ -31,6 +31,7 @@ var foodKey = {
 $(".food-choice").on("click", function(){
   var currentId = $(this).data("id");   // retrieves the data-id of the current row of buttons
   $(`[data-id=${currentId}]`).attr("disabled", true); // disables all buttons of the same row
+  $(this).removeClass("color-2").addClass("color-3");
   $(this).css("background-color", "green");
   $(this).css("opacity", 1);
   userFoodAns.push(this.textContent);
