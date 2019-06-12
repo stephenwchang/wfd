@@ -1,26 +1,35 @@
-        <h3>Examples:</h3>
-
-
-
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 mx-auto" id="main-content">
-        <h1>{{msg}}</h1>
-        <h2>What's For Dinner!</h2>
-          <div>
-            <h3>Here are suggestions for you to go out</h3>
-        <ul>
-          {{#each results}}
-          <li>
-            {{this.name}}
-          </li>
-          {{/each}}
-        </ul>
+        {{#each results}}
+          <div class="row">
+            <div class="col text-center mb-4">
+              <a href="{{this.url}}" class="display-4" id="yelp-title">{{this.name}}</a>
+            </div>
           </div>
+          <div class="row">
+            <div class="col" id="yelp-info">
 
-
-        </ul>
+              <div class="row">
+                Yelp Rating: {{this.rating}}
+              </div>
+              <div class="row">
+                Address: {{this.location.display_address}}
+              </div>
+              <div class="row">
+                Price: {{this.price}}
+              </div>
+              <div class="row">
+                Phone: {{this.display_phone}}
+              </div>
+            </div>
+            <div class="col">
+              <img src="{{this.image_url}}" id="yelp-image" width="200" max-height="80px">
+            </div>
+          </div>
+          <hr id="yelp-divider">
+        {{/each}}
       </div>
     </div>
     <div class="row">

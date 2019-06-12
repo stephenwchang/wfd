@@ -1,8 +1,25 @@
 /* styles.css */
 #main-content {
   background-color: white;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 15px;
 
+}
+
+#yelp-image {
+  margin-left: 50px;
+}
+
+#yelp-title{
+  font-weight: .9;
+}
+#yelp-info {
+  margin-left: 50px
+}
+
+#yelp-divider {
+  border-top: 1px solid
 }
 
 #question {
@@ -23,10 +40,6 @@
   color: indigo;
 }
 
-.food-choice {
- background-color: #80bfff;
-
-}
 
 * {
   -webkit-box-sizing: border-box;

@@ -1,19 +1,32 @@
-
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 mx-auto" id="main-content">
-        <h1>{{msg}}</h1>
-        <h2>What's For Dinner!</h2>
-          <div>
-            <h3>Here's a suggestion for you to cook.</h3>
-            <h3>{{recipe.title}}</h3>
-
-            {{{recipe.instructions}}}
+          <div class="row">
+            <div class="col text-center mb-4">
+              <h2 class="display-4" id="recipe-title">{{recipe.title}}</h2>
+            </div>
+            <div class="row mx-auto pb-3">
+              <img src="{{recipe.image}}" class="img-fluid">
+            </div>
           </div>
+          <div class="row">
+            <div class="col mx-5">
 
-
-        </ul>
+              <div class="row">
+                Ready in: {{recipe.readyInMinutes}} minutes
+              </div>
+              <div class="row">
+                Servings: {{recipe.servings}}
+              </div>
+              <div class="row">
+              </div>
+              <div class="row">
+                Instructions: {{recipe.instructions}}
+              </div>
+            </div>
+          </div>
+          <hr id="yelp-divider">
       </div>
     </div>
     <div class="row">
