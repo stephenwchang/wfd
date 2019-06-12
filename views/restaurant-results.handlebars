@@ -1,4 +1,15 @@
         <h3>Examples:</h3>
+
+
+
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto" id="main-content">
+        <h1>{{msg}}</h1>
+        <h2>What's For Dinner!</h2>
+          <div>
+            <h3>Here are suggestions for you to go out</h3>
         <ul>
           {{#each results}}
           <li>
@@ -6,3 +17,14 @@
           </li>
           {{/each}}
         </ul>
+          </div>
+
+
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <button type="button" class="btn btn-secondary mx-auto mt-4" id="submit-button">Submit</button>
+    </div>
+  </div>
+</div>

@@ -22,10 +22,10 @@ module.exports = function(app) {
   });
 
   // route serves up restaurant results based off user survey result
-  app.get("/results/restaurant", function(req, res) {
+  app.get("/results/restaurant/:result", function(req, res) {
     client
       .search({
-        term: "pizza",
+        term: req.params.result,
         location: "somserset, new jersey"
       })
       .then(function(response) {
