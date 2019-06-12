@@ -39,9 +39,10 @@
 #header {
   margin-bottom: 50px;
   text-align: center;
-  font-family: 'Righteous', cursive;
+  font-family: 'Varela Round', sans-serif;
   font-size: 70px;
   color: indigo;
+  font-weight: bold;
 }
 
 
