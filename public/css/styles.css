@@ -1,8 +1,25 @@
 /* styles.css */
 #main-content {
   background-color: white;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.8);
+  padding: 20px;
+  border-radius: 15px;
 
+}
+
+#yelp-image {
+  margin-left: 50px;
+}
+
+#yelp-title{
+  font-weight: .9;
+}
+#yelp-info {
+  margin-left: 50px
+}
+
+#yelp-divider {
+  border-top: 1px solid
 }
 
 #question {
@@ -12,20 +29,24 @@
 }
 
 .questionwrapper {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  font-size: 18px;
+}
+
+li {
+  line-height: 1em;
 }
 
 #header {
   margin-bottom: 50px;
   text-align: center;
-  font-family: 'Righteous', cursive;
+  font-family: 'Varela Round', sans-serif;
   font-size: 70px;
   color: indigo;
-}
-
-.food-choice {
- background-color: #80bfff;
-
+  font-weight: bold;
 }
 
 #lastquestion {
@@ -56,22 +77,15 @@
   background-size: 300% 100%;
 
   border-radius: 50px;
-  mo
+
 }
 
-.btn-hover:focus {
-  outline: none;
-}
 
-.btn-hover.color-1 {z-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
+
 
 .btn-hover:hover {
   background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;

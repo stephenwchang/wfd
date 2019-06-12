@@ -1,11 +1,8 @@
-        <h3>Examples:</h3>
-
-
-
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 mx-auto" id="main-content">
+<<<<<<< HEAD
         <h1>{{msg}}</h1>
         <h2>What's For Dinner?</h2>
           <div>
@@ -17,10 +14,54 @@
           </li>
           {{/each}}
         </ul>
+=======
+        <!-- Modal -->
+        <div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-center" id="exampleModalLabel">
+                  Looks like you might be in the mood for {{survey.response}}!
+                </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-footer mx-auto">
+                  Here are some suggestions:
+                </div>
+            </div>
+>>>>>>> 7b12b527b9b7969bb3b8ded310adf6278ccadceb
           </div>
+        </div>
+        {{#each results}}
+          <div class="row">
+            <div class="col text-center mb-4">
+              <a href="{{this.url}}" class="display-4" id="yelp-title">{{this.name}}</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" id="yelp-info">
 
-
-        </ul>
+              <div class="row">
+                <span><b>Yelp Rating: </b>{{this.rating}}</span>
+              </div>
+              <div class="row">
+                <span><b>Address: </b>{{this.location.display_address}}</span>
+              </div>
+              <div class="row">
+                <span><b>Price: </b>{{this.price}}</span>
+              </div>
+              <div class="row">
+                <span><b>Phone: </b>{{this.display_phone}}</span>
+              </div>
+            </div>
+            <div class="col">
+              <img src="{{this.image_url}}" id="yelp-image" width="200" max-height="80px">
+            </div>
+          </div>
+          <hr id="yelp-divider">
+        {{/each}}
       </div>
     </div>
     <div class="row">

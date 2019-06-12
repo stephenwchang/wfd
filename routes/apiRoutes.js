@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 var db = require("../models");
 var yelp = require("yelp-fusion");
 var unirest = require("unirest");
@@ -22,14 +24,15 @@ module.exports = function(app) {
   });
 
   // route serves up restaurant results based off user survey result
-  app.get("/results/restaurant/:result", function(req, res) {
+  app.get("/results/restaurant/:result/:zip", function(req, res) {
     client
       .search({
         term: req.params.result,
-        location: "somserset, new jersey"
+        location: req.params.zip
       })
       .then(function(response) {
         res.render("restaurant-results", {
+          survey: { response: req.params.result },
           results: response.jsonBody.businesses
         });
       })
@@ -46,11 +49,11 @@ module.exports = function(app) {
 
   // Get all examples
   app.get("/results/recipe/:result", function(req, res) {
-    var result = req.params.result;
+    var surveyResult = req.params.result;
     // res.redirect("/results/recipe")
     unirest
     .get(
-      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?type=main+course&query=" + result
+      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?type=main+course&query=" + surveyResult
     )
     .header(
       "X-RapidAPI-Host",
@@ -61,13 +64,18 @@ module.exports = function(app) {
       "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0"
     )
     .end(function(result) {
-      var foodId = result.body.results[0].id;
+      var foodId = result.body.results[Math.floor(Math.random() * result.body.results.length)].id;
       unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + foodId + "/information")
         .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
         .header("X-RapidAPI-Key", "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0")
         .end(function (result) {
           console.log(result.body);
-          res.render("recipe-results", { recipe: result.body });
+          res.render("recipe-results",
+          {
+            recipe: result.body,
+            ingredients: result.body.extendedIngredients,
+            survey: { response: surveyResult }
+          });
         });
     });
   });
