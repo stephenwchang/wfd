@@ -36,6 +36,10 @@
   font-size: 18px;
 }
 
+li {
+  line-height: 1em;
+}
+
 #header {
   margin-bottom: 50px;
   text-align: center;
@@ -44,7 +48,6 @@
   color: indigo;
   font-weight: bold;
 }
-
 
 * {
   -webkit-box-sizing: border-box;

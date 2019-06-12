@@ -33,15 +33,23 @@
           <div class="col mx-5">
 
             <div class="row">
-              Ready in: {{recipe.readyInMinutes}} minutes
+              <span><b>Ready in: </b> {{recipe.readyInMinutes}} minutes </span>
             </div>
             <div class="row">
-              Servings: {{recipe.servings}}
+              <span><b>Servings: </b> {{recipe.servings}} </span>
             </div>
             <div class="row">
+              <b>Ingredients:</b>
+                <div class="row">
+                {{#each ingredients}}
+                  <ul>
+                    <li>{{this.original}}</li>
+                  </ul>
+                {{/each}}
+                </div>
             </div>
             <div class="row">
-              Instructions: {{recipe.instructions}}
+              <b>Instructions:</b> {{recipe.instructions}}
             </div>
           </div>
         </div>

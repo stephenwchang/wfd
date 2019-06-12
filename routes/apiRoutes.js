@@ -73,6 +73,7 @@ module.exports = function(app) {
           res.render("recipe-results",
           {
             recipe: result.body,
+            ingredients: result.body.extendedIngredients,
             survey: { response: surveyResult }
           });
         });
