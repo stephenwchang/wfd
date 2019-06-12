@@ -2,6 +2,24 @@
   <div class="container">
     <div class="row">
       <div class="col-8 mx-auto" id="main-content">
+        <!-- Modal -->
+        <div class="modal fade" id="restaurantModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-center" id="exampleModalLabel">
+                  Looks like you might be in the mood for {{survey.response}}!
+                </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <div class="modal-footer mx-auto">
+                  Here are some suggestions:
+                </div>
+            </div>
+          </div>
+        </div>
         {{#each results}}
           <div class="row">
             <div class="col text-center mb-4">

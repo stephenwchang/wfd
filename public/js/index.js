@@ -80,3 +80,9 @@ function getMax(object) {
        Object.values(object));
  });
 };
+
+// load modals on page load
+
+$(window).on("load", function() {
+  $("#restaurantModal").modal("show");
+});

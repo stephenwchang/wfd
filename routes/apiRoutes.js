@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 var db = require("../models");
 var yelp = require("yelp-fusion");
 var unirest = require("unirest");
@@ -30,6 +32,7 @@ module.exports = function(app) {
       })
       .then(function(response) {
         res.render("restaurant-results", {
+          survey: { response: req.params.result },
           results: response.jsonBody.businesses
         });
       })
@@ -46,11 +49,11 @@ module.exports = function(app) {
 
   // Get all examples
   app.get("/results/recipe/:result", function(req, res) {
-    var result = req.params.result;
+    var surveyResult = req.params.result;
     // res.redirect("/results/recipe")
     unirest
     .get(
-      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?type=main+course&query=" + result
+      "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?type=main+course&query=" + surveyResult
     )
     .header(
       "X-RapidAPI-Host",
@@ -67,7 +70,11 @@ module.exports = function(app) {
         .header("X-RapidAPI-Key", "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0")
         .end(function (result) {
           console.log(result.body);
-          res.render("recipe-results", { recipe: result.body });
+          res.render("recipe-results",
+          {
+            recipe: result.body,
+            survey: { response: surveyResult }
+          });
         });
     });
   });

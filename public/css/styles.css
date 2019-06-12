@@ -29,7 +29,11 @@
 }
 
 .questionwrapper {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  font-size: 18px;
 }
 
 #header {
