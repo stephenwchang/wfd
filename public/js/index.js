@@ -46,6 +46,11 @@ $("#go-out").on("click", function() {
   window.location.replace("/results/restaurant/"+generateResult())
 });
 
+$("#back-button").on("click", function() {
+  window.location.replace("/")
+});
+
+
 function generateResult() {
   for (var i = 0; i < userFoodAns.length; i++) {
     var ans = userFoodAns[i];
