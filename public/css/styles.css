@@ -28,16 +28,20 @@
 
 }
 
+#lastquestion {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.buttons {
-  margin: 10%;
-  text-align: center;
-}
+
 
 .btn-hover {
   width: 200px;
