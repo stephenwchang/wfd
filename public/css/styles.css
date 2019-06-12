@@ -11,6 +11,18 @@
   font-weight: bold;
 }
 
+.questionwrapper {
+  margin-bottom: 20px
+}
+
+#header {
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  font-size: 70px;
+  color: indigo;
+}
+
 .food-choice {
  background-color: #80bfff;
 
