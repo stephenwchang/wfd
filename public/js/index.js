@@ -14,6 +14,7 @@ var foodKey = {
   tacos: ["spicy", "salsa", "something seasoned"]
 };
 
+
 $(".food-choice").on("click", function(){
   var currentId = $(this).data("id");   // retrieves the data-id of the current row of buttons
   $(`[data-id=${currentId}]`).attr("disabled", true); // disables all buttons of the same row
@@ -24,7 +25,15 @@ $(".food-choice").on("click", function(){
   console.log(userFoodAns);
 });
 
-$("#submit-button").on("click", function() {
+$("#stay-in").on("click", function() {
+  window.location.replace("/results/recipe/"+generateResult())
+});
+
+$("#go-out").on("click", function() {
+  window.location.replace("/results/restaurant/"+generateResult())
+});
+
+function generateResult() {
   for (var i = 0; i < userFoodAns.length; i++) {
     var ans = userFoodAns[i];
     for (var key in foodKey) {
@@ -34,4 +43,7 @@ $("#submit-button").on("click", function() {
       }
     }
   }
-});
+
+  var surveyResult = "pizza";
+  return surveyResult;
+}
