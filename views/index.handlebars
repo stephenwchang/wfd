@@ -3,16 +3,16 @@
     <div class="row">
       <div class="col-8 mx-auto" id="main-content">
         <h1>{{msg}}</h1>
-        <h2>What's For Dinner!</h2>
-        <h3>Survey</h3>
-          {{#each questions}}
+        <h2 id="header">What's For Dinner?</h2>
 
+          {{#each questions}}
+<div class= "questionwrapper">
           <div id="question">{{this.food_question}}</div>
-          <button type="button" class="btn btn-primary food-choice" data-id={{this.id}}>{{this.food_choices1}}</button>
-          <button type="button" class="btn btn-primary food-choice" data-id={{this.id}}>{{this.food_choices2}}</button>
-          <button type="button" class="btn btn-primary food-choice" data-id={{this.id}}>{{this.food_choices3}}</button>
-          <button type="button" class="btn btn-primary food-choice" data-id={{this.id}}>{{this.food_choices4}}</button>
-          
+          <button type="button" class="btn btn-info food-choice" data-id={{this.id}}>{{this.food_choices1}}</button>
+          <button type="button" class="btn btn-info food-choice" data-id={{this.id}}>{{this.food_choices2}}</button>
+          <button type="button" class="btn btn-info food-choice" data-id={{this.id}}>{{this.food_choices3}}</button>
+          <button type="button" class="btn btn-info food-choice" data-id={{this.id}}>{{this.food_choices4}}</button>
+</div>
           {{/each}}
 
 
