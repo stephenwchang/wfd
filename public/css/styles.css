@@ -29,7 +29,11 @@
 }
 
 .questionwrapper {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  font-size: 18px;
 }
 
 #header {
@@ -68,15 +72,8 @@
   mo
 }
 
-.btn-hover:focus {
-  outline: none;
-}
 
-.btn-hover.color-1 {z-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
+
 
 .btn-hover:hover {
   background-position: 100% 0;
