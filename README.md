@@ -1,3 +1,4 @@
+https://whatsfordinner1.herokuapp.com/
 # wfd
 what's for dinner?
 
@@ -18,6 +19,7 @@ We could expand the number of foods we have, while also adjusting the answers (o
 
 
 
+![image](https://user-images.githubusercontent.com/46582302/65398505-9283a280-dd85-11e9-964c-5485b92f0cb4.png)
 
 
 
