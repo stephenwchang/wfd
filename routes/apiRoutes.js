@@ -54,12 +54,12 @@ module.exports = function(app) {
     unirest
     .get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?type=main+course&query=" + surveyResult)
     .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-    .header("X-RapidAPI-Key", "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0")
+    .header("X-RapidAPI-Key", "22ba6c9db7msh44b0d10b0c53a95p127960jsnea150f3f44f7")
     .end(function(result) {
       var foodId = result.body.results[Math.floor(Math.random() * result.body.results.length)].id;
       unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/" + foodId + "/information")
         .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-        .header("X-RapidAPI-Key", "d9998d3243msh03685cdf429ad73p1caebejsn36b4a0c9ebf0")
+        .header("X-RapidAPI-Key", "22ba6c9db7msh44b0d10b0c53a95p127960jsnea150f3f44f7")
         .end(function (result) {
           console.log(result.body);
           res.render("recipe-results",
