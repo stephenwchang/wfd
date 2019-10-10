@@ -15,16 +15,16 @@ var userScore = {
 var userFoodAns = [];
 
 var foodKey = {
-  pizza: ["something cheesy", "probably pizza", "something with cheese", "to fill me up as cheaply as possible", "five bucks", "no man", "idk but cheese", "pizza spot", "gotta have cheese", "pizza", "yellow (CHEESE)"],
-  indian: ["indian food", "to experience diff flavors and spices", "twenty bucks", "hell yes", "something saucy and spicy", "indian joint", "chicken tikka masala", "red/orange (saucy)"],
-  cookie: ["something sweet", "dessert", "five bucks", "I'd rather have sweet", "Dinner?naw, dessert", "pastry shop", "cookies/brownies", "cakes/cookies", "brownies"],
-  burrito: ["something cheesy", "ten bucks", "maybe a lil", "tacos, red/orange (saucy)", "multicolored"],
-  sushi: ["japanese/chinese food", "flavor and nuance", "im ballin’ idgaf", "fresh sushi", "multicolored"],
-  burgers: ["something cheesy", "something with cheese", "to fill me up as cheaply as possible", "ten bucks", "no man", "burgers 4 days"],
-  chinese: ["twenty bucks", "japanese/chinese food", "maybe a lil", "something saucy and spicy", "chinese takeout", "red/orange (saucy)"],
-  salad: ["something refreshing/healthy", "not to die", "twenty bucks", "no man", "healthy food",  "grocery for fresh ingredients", "vegi bro", "assorted vegetables", "green", "multicolored"],
-  soup: ["something refreshing/healthy", "not to die", "five bucks", "vegi bro", "green"],
-  cake: ["something sweet", "dessert", "I'd rather have sweet", "Dinner?naw, dessert", "healthy food", "pastry shop", "pastries", "cakes/cookies"],
+  pizza: ["Something cheesy", "Pizza", "Something with cheese", "To fill me up as cheaply as possible", "$5", "No", "Cheese platter", "Pizza spot", "Yellow"],
+  indian: ["Indian", "To experience different flavors and spices", "$20", "Yes", "Something saucy and spicy", "Indian joint", "Chicken Tikka Masala", "Red/orange (saucy)"],
+  cookie: ["Something sweet", "Cookies", "Dessert", "$5", "I'd rather have something sweet", "To satisfy my sweet tooth", "Pastry shop", "Cookies/brownies", "Cakes/cookies", "Brownies"],
+  burrito: ["Something cheesy", "$10", "Slightly", "Tacos, Red/orange (saucy)", "Multicolored"],
+  sushi: ["Japanese/Chinese", "Flavor and nuance", "$50", "Fresh sushi", "Multicolored"],
+  burgers: ["Something cheesy", "Something with cheese", "To fill me up as cheaply as possible", "$10", "No", "Burgers"],
+  chinese: ["$20", "Japanese/Chinese", "Slightly", "Something saucy and spicy", "Chinese takeout", "Red/orange (saucy)"],
+  salad: ["Something healthy", "$20", "Nutrients and nourishment", "Healthy food",  "Grocery for fresh ingredients", "Veggetable platter", "Assorted vegetables", "Green", "Multicolored"],
+  soup: ["Something healthy", "Nutrients and nourishment", "$5", "Green"],
+  cake: ["Something sweet", "Dessert", "I'd rather have something sweet", "To satisfy my sweet tooth", "Healthy food", "Pastry shop", "Pastries", "Cakes/cookies"],
 };
 
 
